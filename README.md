@@ -44,5 +44,82 @@ Design a user registration form with the following requirements:
 
 **Example Output:**  
 A user-friendly registration form that prevents submission if required fields are not filled correctly.  
+  Solution
 
----
+
+  Part 1: Multimedia Webpage
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multimedia Webpage</title>
+</head>
+<body>
+    <h1>Welcome to My Multimedia Page</h1>
+
+    <h2>Audio Player</h2>
+    <audio controls>
+        <source src="audio.mp3" type="audio/mp3">
+        <source src="audio.ogg" type="audio/ogg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <h2>Video Player</h2>
+    <video controls poster="poster-image.jpg">
+        <source src="video.mp4" type="video/mp4">
+        <source src="video.webm" type="video/webm">
+        Your browser does not support the video element.
+    </video>
+
+</body>
+</html>
+Part 2: Registration Form
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+</head>
+<body>
+    <h1>User Registration</h1>
+
+    <form action="submit_form.php" method="post" novalidate>
+        <label for="fullname">Full Name:</label>
+        <input type="text" id="fullname" name="fullname" required maxlength="100">
+        <br><br>
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+        <br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required minlength="8">
+        <br><br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required min="18">
+        <br><br>
+
+        <label>Gender:</label>
+        <input type="radio" id="male" name="gender" value="male" required> Male
+        <input type="radio" id="female" name="gender" value="female" required> Female
+        <input type="radio" id="other" name="gender" value="other" required> Other
+        <br><br>
+
+        <label for="terms">
+            <input type="checkbox" id="terms" name="terms" required>
+            I agree to the Terms and Conditions
+        </label>
+        <br><br>
+
+        <button type="submit">Register</button>
+    </form>
+
+</body>
+</html>
